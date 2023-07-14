@@ -73,6 +73,10 @@ function main() {
     const table = getEntriesTable();
     const basePath = getBasePath();
     const headerRow = getHeaderRow(table);
+    const fileNameHeader = headerRow.firstElementChild;
+    if (fileNameHeader instanceof HTMLElement) {
+        fileNameHeader.style.width = "unset";
+    }
 
     const tableParent = table.parentElement;
     if (!tableParent) {
@@ -128,12 +132,12 @@ function main() {
     }
 
     const myHeader = createHeaderCell(refreshSelectedListEntries);
-    headerRow.appendChild(myHeader);
+    headerRow.prepend(myHeader);
 
     const rows = table.querySelectorAll<HTMLTableRowElement>('tbody tr');
     for (const row of rows) {
         const myCell = document.createElement('td');
-        row.appendChild(myCell);
+        row.prepend(myCell);
 
         let listEntry: ListEntry;
         try {

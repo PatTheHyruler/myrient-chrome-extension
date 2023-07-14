@@ -1,6 +1,6 @@
 .myrient-text-input {
-    color: #FFFFFF;
-    background-color: #262A32;
+    color: #ffffff;
+    background-color: #262a32;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -13,9 +13,13 @@
     padding: 0.3em;
     border-radius: 0.5em;
     border-width: medium;
-    background-color: #262A32;
+    background-color: #262a32;
     color: white;
     font-weight: bold;
+}
+
+.myrient-button:hover {
+    cursor: pointer;
 }
 
 .container-general {
@@ -26,4 +30,21 @@
 .code-text-container {
     white-space: pre-wrap;
     overflow-wrap: break-word;
+}
+
+#list th:nth-of-type(2),
+#list td:nth-of-type(2) {
+    text-align: unset !important;
+}
+
+#list th:nth-of-type(3) {
+    text-align: right;
+}
+
+#list td:nth-of-type(3) {
+    text-align: center;
+}
+
+#list td:nth-of-type(1) {
+    width: 10em;
 }
