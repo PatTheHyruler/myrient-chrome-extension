@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "esModuleInterop": true,
+        "strict": true,
+        "alwaysStrict": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true,
+        "experimentalDecorators": true,
+        "forceConsistentCasingInFileNames": true,
+        "noFallthroughCasesInSwitch": true,
+        "module": "CommonJS",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": false,
+        "downlevelIteration": true,
+        "sourceMap": true,
+        "noEmitOnError": true,
+        "typeRoots": ["node_modules/@types"],
+        "plugins": [{"name": "typescript-plugin-css-modules"}]
+    },
+    "include": ["src"]
+}

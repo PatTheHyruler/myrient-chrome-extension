@@ -1,0 +1,19 @@
+.myrient-text-input {
+    color: #FFFFFF;
+    background-color: #262A32;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    margin-top: 20px;
+    box-sizing: content-box;
+}
+
+.myrient-button {
+    padding: 0.3em;
+    border-radius: 0.5em;
+    border-width: medium;
+    background-color: #262A32;
+    color: white;
+    font-weight: bold;
+}

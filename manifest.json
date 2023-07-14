@@ -1,0 +1,16 @@
+{
+    "name": "Myrient helper",
+    "description": "Helper for browsing the Myrient archive website",
+    "version": "0.1",
+    "manifest_version": 3,
+    "permissions": [],
+    "content_scripts": [
+        {
+            "js": ["dist/main.js"],
+            "css": ["dist/css/main.css"],
+            "matches": [
+                "https://myrient.erista.me/files/*"
+            ]
+        }
+    ]
+ }

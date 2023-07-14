@@ -1,0 +1,23 @@
+{
+  "name": "myrient-chrome-extension",
+  "version": "1.0.0",
+  "description": "Helper for browsing the Myrient archive website",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack/webpack.config.js"
+  },
+  "keywords": [],
+  "author": "PatTheHyruler",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chrome": "^0.0.241",
+    "copy-webpack-plugin": "^11.0.0",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.1.6",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "typescript-plugin-css-modules": "^5.0.1"
+  }
+}
