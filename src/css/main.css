@@ -17,3 +17,13 @@
     color: white;
     font-weight: bold;
 }
+
+.container-general {
+    width: 80%;
+    margin: auto;
+}
+
+.code-text-container {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
