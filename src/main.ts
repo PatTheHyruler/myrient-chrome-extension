@@ -1,6 +1,7 @@
 import Css from "./Css";
 import ListEntry from "./ListEntry";
 import { createCopyRsyncCommandButton, createCopyRsyncPathButton, createRsyncCommandElement, createRsyncDestinationPathInput, createRsyncOptionsInput, getRsyncCommand, getRsyncPath } from "./rsyncFunctions";
+import { createSummaryElement } from "./summaryFunctions";
 
 function getEntriesTable(): HTMLTableElement {
     const table = document.querySelector<HTMLTableElement>('#list');
@@ -106,8 +107,6 @@ function main() {
         }
     }
 
-    refreshRsyncCommand();
-
     pathInput.addEventListener("input", () => {
         refreshRsyncCommand();
     });
@@ -115,6 +114,8 @@ function main() {
     overrideRsyncOptionsInput.addEventListener("input", () => {
         refreshRsyncCommand();
     });
+
+    const [summaryElement, updateSummaryElement] = createSummaryElement(listEntries);
 
     function refreshSelectedListEntries(entryFunc: ListEntryPostRefreshFunc | null = null) {
         selectedListEntries = [];
@@ -128,11 +129,15 @@ function main() {
             entryFunc(listEntry, selectedListEntries);
         }
 
+        updateSummaryElement(selectedListEntries);
+
         refreshRsyncCommand();
     }
 
     const myHeader = createHeaderCell(refreshSelectedListEntries);
     headerRow.prepend(myHeader);
+
+    myHeader.appendChild(summaryElement);
 
     const rows = table.querySelectorAll<HTMLTableRowElement>('tbody tr');
     for (const row of rows) {
@@ -155,6 +160,8 @@ function main() {
         const copyRsyncCommandButton = createCopyRsyncCommandButton(listEntry, overrideRsyncOptionsInput);
         myCell.appendChild(copyRsyncCommandButton);
     }
+
+    refreshSelectedListEntries();
 }
 
 main();

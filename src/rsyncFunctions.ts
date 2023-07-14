@@ -94,7 +94,7 @@ export function createCopyRsyncCommandButton(listEntry: ListEntry, optionsOverri
         copyRsyncCommandButton.addEventListener('click', () => {
             navigator.clipboard.writeText(getRsyncCommand(listEntry.title, optionsOverrideElement.value, listEntry.rsyncPath));
         });
-        copyRsyncCommandButton.innerText = 'CR';
+        copyRsyncCommandButton.innerText = 'RC';
         copyRsyncCommandButton.title = 'Copy Rsync command';
         return copyRsyncCommandButton;
 }

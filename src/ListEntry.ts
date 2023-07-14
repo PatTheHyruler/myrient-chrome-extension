@@ -85,6 +85,31 @@ class ListEntry {
     toggleSelected(): void {
         this.selected = !this.selected;
     }
+
+    public get sizeKiB(): number | null {
+        try {
+            const pattern = /(?<SIZE>(?:\d+(?:\.\d+)?)+) (?<UNIT>KiB|MiB|GiB)/;
+            const regexResult = pattern.exec(this.sizeElement.innerText);
+            if (!regexResult?.groups) {
+                return null;
+            }
+            const sizeString = regexResult.groups["SIZE"];
+            const unitString = regexResult.groups["UNIT"];
+            let result = parseFloat(sizeString);
+            if (unitString === "KiB") {
+            } else if (unitString === "MiB") {
+                result *= 1024;
+            } else if (unitString === "GiB") {
+                result *= 1024 ** 2;
+            } else {
+                throw new Error(`Unsupported unit: '${unitString}'`);
+            }
+            return result;
+        } catch (e) {
+            console.log(e);
+            return null;
+        }
+    }
 }
 
 export default ListEntry;
