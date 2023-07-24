@@ -31,6 +31,8 @@
 .code-text-container {
     white-space: pre-wrap;
     overflow-wrap: break-word;
+    max-height: 12rem;
+    overflow-y: auto;
 }
 
 #list th:nth-of-type(2),
