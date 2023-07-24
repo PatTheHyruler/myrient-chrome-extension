@@ -37,7 +37,7 @@ function getSizeDisplay(sizeKiB: number | null, unknownCountPresent: boolean = f
     }
 
     const sizeTiB = sizeGiB / 1024;
-    return `${round(sizeTiB)}${unknownCountPresentString} GiB`;
+    return `${round(sizeTiB)}${unknownCountPresentString} TiB`;
 }
 
 export function createSummaryElement(allEntries: ListEntry[]): [HTMLElement, (entries: ListEntry[]) => void] {
